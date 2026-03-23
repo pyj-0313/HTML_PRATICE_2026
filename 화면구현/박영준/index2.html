@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+
+
+            text-decoration: none;
+            color: black;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .wrapper {
+            /* width:1100px; */
+        }
+
+        /* Layout-header */
+        .wrapper>header {}
+
+        .wrapper>header>nav {
+            flex-direction: column;
+            margin: 0 auto;
+            display: flex;
+            padding: 0;
+        }
+
+        .wrapper>header>.top-header {}
+
+        .wrapper>header>.top-header>ul {
+            /* border: 1px solid; */
+            padding: 15px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: right;
+            font-size: 14px;
+            gap: 0px;
+            width: 1100px;
+
+
+        }
+
+        .wrapper>header>.top-header>ul>li {
+            display: inline-block;
+            position: relative;
+            padding: 0 20px;
+
+
+        }
+
+        .wrapper>header>.top-header>ul>li+li {
+            border-left: 1px solid;
+            /* border: 1px solid; */
+            color: #888888;
+        }
+
+        .wrapper>header>nav {
+            width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .wrapper>header>nav>.nav-top>.left>img {
+            width: 250px;
+            /* border: 1px solid; */
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .search-input {
+            border: 1px solid;
+            width: 400px;
+            height: 55px;
+            display: flex;
+            position: relative;
+            color: #918c00;
+            font-size: 1rem;
+            padding: 10px;
+            outline: none;
+        }
+
+        .wrapper>header>nav>.nav-top>.right>img {
+            padding: 0;
+            margin-right: 100px;
+            /* border: 1px solid; */
+            cursor: pointer;
+        }
+
+        .wrapper>header>nav>.nav-top>.cart>img {
+            position: absolute;
+            right: 10px;
+            border: 1px solid;
+        }
+
+        .wrapper>header>nav>.nav-top>.cart {
+            /* border: 1px solid; */
+            padding: 0;
+            right: 600px;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            /* border: 1px solid; */
+            gap: 70px;
+            margin-top: -30px;
+
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li {
+            /* border: 1px solid; */
+            font-size: 1rem;
+
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li>a {}
+
+        /* sitemenu css */
+        #sitemenu {
+            position: relative;
+        }
+
+        #sitemenu>input[type="checkbox"] {
+            display: none;
+        }
+
+        #sitemenu>label {
+            cursor: pointer;
+        }
+
+        #sitemenu>label>span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: gray;
+            transition: .4s;
+            transform-origin: center;
+        }
+
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(2) {
+            visibility: hidden;
+            transition: 0s;
+        }
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        #sitemenu>.site-block {
+            border: 1px solid;
+            position: absolute;
+            left: -10;
+            top: 30px;
+            width: 1100px;
+            height: 50vh;
+
+            /* margin:0 auto; */
+
+            /* background-color: orange; */
+            display: none
+        }
+
+        #sitemenu>input[type="checkbox"]:checked~.site-block {
+            display: block;
+        }
+
+        /* Layout-main */
+        .wrapper>main {}
+
+        .wrapper>main>section {}
+
+        /* Layout-footer */
+        .wrapper>footer {}
+    </style>
+        <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        </style>
+
+    <style>
+        .slider-block{
+            width : 1200px;
+            height : 500px;
+            margin : 50px auto;
+            border : 1px solid;
+            overflow : hidden;
+        }
+        .slider-block>.slider-wrapper{
+            width : 3600px;
+            height : 500px;
+            position:relative;
+
+            display:flex;
+            align-items: center;
+            
+            transition:.3s;
+           
+        }
+        .slider-block>input[type='radio']{
+            z-index : 10;
+            display:none;
+        }
+        .slider-block>.slider-wrapper>.item{
+            width : 1200px;
+            height :500px;
+
+            position:relative;
+            left:0;
+            top:0;
+
+            transition:.5s;
+        }
+        .slider-block>.slider-wrapper>.item>label{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width : 50px;
+            height : 50px;
+            border : 1px solid white;
+            border-radius: 50%;
+
+            position:absolute;
+            top:calc(50% - 25px);
+            z-index : 10;
+            cursor: pointer;
+            
+            color : white;
+
+        }
+        .slider-block>.slider-wrapper>.item>label.prev{
+            left:5px;
+        }
+        .slider-block>.slider-wrapper>.item>label.next{
+            right:5px;
+        }
+        .slider-block>.slider-wrapper>.item>.show{
+            width : 100%;
+            height : 100%;
+
+            display:flex;
+            align-items: center;;
+            justify-content: center;
+            font-size : 3rem;
+
+            position:absolute;
+            left:0;
+            top:0;
+        }
+        .slider-block>.slider-wrapper>.item>.show.one{
+            background-color: orange;
+            opacity: 1;
+          
+        }
+        .slider-block>.slider-wrapper>.item>.show.two{
+            background-color: royalblue;
+            opacity: 1;
+        }
+        .slider-block>.slider-wrapper>.item>.show.three{
+            background-color: rebeccapurple;
+            opacity: 1;
+        }
+
+
+
+        .slider-block>#forward-2:checked~.slider-wrapper{
+            left:-1200px;
+          
+        }
+        .slider-block>#forward-3:checked~.slider-wrapper{
+            left:-2400px;
+           
+        }
+        .slider-block>#backend-1:checked~.slider-wrapper{
+            left:0px;
+           
+        }
+        .slider-block>#backend-2:checked~.slider-wrapper{
+            left:-1200px;
+            
+        }
+        @keyframes m1{
+            from{}
+            to{}
+        }
+        @keyframes m2{
+            from{}
+            to{}
+        }
+        @keyframes m3{
+            from{}
+            to{}
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <header>
+            <div class="top-header">
+                <ul>
+                    <li><a href="javascript:void(0)">로그인</a></li>
+                    <li><a href="javascript:void(0)">회원가입</a></li>
+                    <li><a href="javascript:void(0)">쿠폰등록</a></li>
+                    <li><a href="javascript:void(0)">스크랩</a></li>
+                    <li><a href="javascript:void(0)">고객센터</a></li>
+                </ul>
+            </div>
+            <nav>
+                <div class="nav-top">
+                    <div class="left logo">
+                        <img src="./logo2.png" alt="logo">
+                    </div>
+                    <div class="serach">
+                        <input id="newSearchInput" class="search-input" type="text" placeholder="건강을 쉽게, 뉴트릿">
+                    </div>
+                    <div class="right logo">
+                        <img src="./배송안내.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="nav-bottom">
+                    <ul>
+                        <li id="sitemenu">
+                            <input type="checkbox" id="chk">
+                            <label for="chk">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+
+                            </label>
+
+                            <div class="site-block">
+
+
+                            </div>
+                        </li>
+
+                        <li><a href="javascript:void(0)">카테고리</a></li>
+                        <li><a href="javascript:void(0)">할인</a></li>
+                        <li><a href="javascript:void(0)">기획전</a></li>
+                        <li><a href="javascript:void(0)">이벤트</a></li>
+                        <li><a href="javascript:void(0)">라운지</a></li>
+                        <li><a href="javascript:void(0)">시니어관</a></li>
+                        <li><a href="javascript:void(0)">브랜드직송관</a></li>
+                        <li><a href="javascript:void(0)">무료영양진단</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="slider-block">
+                <input type="radio" id="forward-2" name="slideradio">
+                <input type="radio" id="forward-3" name="slideradio">
+                <input type="radio" id="backend-1" name="slideradio" checked>
+                <input type="radio" id="backend-2" name="slideradio">
+                <div class="slider-wrapper">
+                    <!-- 1번 슬라이드 -->
+                    <div class="item">
+                        <label for="" class="prev"><span class="material-symbols-outlined">arrow_left</span></label>
+                        <label for="forward-2" class="next"><span
+                                class="material-symbols-outlined">arrow_right</span></label>
+                        <div class="show one">SLIDER-01</div>
+                    </div>
+                    <!-- 2번 슬라이드 -->
+                    <div class="item">
+                        <label for="backend-1" class="prev"><span
+                                class="material-symbols-outlined">arrow_left</span></label>
+                        <label for="forward-3" class="next"><span
+                                class="material-symbols-outlined">arrow_right</span></label>
+                        <div class="show two">SLIDER-02</div>
+                    </div>
+                    <!-- 3번 슬라이드 -->
+                    <div class="item">
+                        <label for="backend-2" class="prev"><span
+                                class="material-symbols-outlined">arrow_left</span></label>
+                        <label for="" class="next"><span class="material-symbols-outlined">arrow_right</span></label>
+                        <div class="show three">SLIDER-03</div>
+                    </div>
+                </div>
+            </div>
+            <section></section>
+            <section></section>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+
+</html>

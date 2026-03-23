@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* layout */
+        .layout-1990 {
+            width: 1990px;
+            /* height: 1430px; */
+            margin: 0 auto;
+        }
+
+        /* layour2 */
+        .layout2-1100 {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        .wrapper {}
+
+        /* layout-header */
+        .wrapper>header {}
+
+        .wrapper>header>.bar {
+            /* border: 1px solid; */
+            padding: 10px 15px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .wrapper>header>.top-header {}
+
+        .wrapper>header>.top-header>ul {
+            /* border:1px solid; */
+            display: flex;
+            justify-content: right;
+        }
+
+        .wrapper>header>.top-header>ul>li {
+            /* border:1px solid; */
+            padding: 10px 15px;
+        }
+
+        .wrapper>header>.top-header>ul>li:last-child {
+            padding-right: 0;
+        }
+
+        .wrapper>header>.top-header>ul>li>a {
+            display: block;
+            font-size: .8rem;
+            color: gray;
+        }
+
+        +.wrapper>header>nav {}
+
+        /* nav-bottom */
+        .wrapper>header>nav>.nav-bottom {
+            /* border: 1px solid; */
+            height: 40px;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul {
+            /* border: 1px solid; */
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 100%;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li {
+            width: 100%;
+            /* border: 1px solid; */
+            padding: 5px 10px;
+            padding-bottom: 0;
+            height: 100%;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li>span {
+            position: absolute;
+            left: 58.7%;
+            top: 170px;
+
+            color: red;
+            font-size: .7rem;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li:first-child {
+            padding-left: 0;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li>a:hover {
+            /* border-bottom:2px solid; */
+        }
+
+        /* layout-main */
+        .wrapper>main {}
+
+        .wrapper>main>section {
+            /* min-height:250px; */
+        }
+
+        /* layout footer */
+        .wrapper>footer {}
+
+        .wrapper>footer>.footer {
+            display: inline;
+            justify-content: left;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        .wrapper>footer>.footer>.footer-section {
+            width: 100%;
+        }
+
+        .nav-top {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+
+        }
+
+        .nav-top>.label {
+            margin: 0;
+            display: flex;
+            border: 1px solid color white;
+            /* padding-right: 0; */
+            width: 250px;
+            list-style: none;
+            height: 50px;
+            font-size: 1.7rem;
+            justify-content: center;
+            border-radius: 30px;
+            background-color: #918c00;
+            color: white;
+        }
+
+        .search-input {
+            width: 400px;
+            padding: 8px 12px;
+            height: 50px;
+            font-size: 1rem;
+            border-radius: 10px;
+        }
+
+        .wrapper>header>nav>.nav-top>.left>img {
+            width: 200px;
+            display:block;
+            
+        }
+        
+        .wrapper>header>nav>.nav-top>.right>img{
+            display: block;
+            position: absolute;
+            right:500px;
+            top:90px;
+        }
+        .wrapper>header>nav>.nav-top>.cart>img{
+            position: absolute;
+            right:450px;
+        }
+
+        .wrapper>header>nav>.nav-top>.cart{
+            border: 1px solid;
+            padding:1px 10px;
+            border-radius: 100%; 
+            font-size: 1rem;
+            background-color: #918c00;
+            color: #ffffff;
+            
+        }
+        /* sitemenu css */
+        #sitemenu {
+            position: relative;
+        }
+
+        #sitemenu>input[type="checkbox"] {
+            display: none;
+        }
+
+        #sitemenu>label {
+            cursor: pointer;
+        }
+
+        #sitemenu>label>span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            margin: 5px;
+            background-color: gray;
+            transition: .4s;
+        }
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(1) {
+            transform: translate(0px, 8px) rotate(45deg);
+        }
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(2) {
+            visibility: hidden;
+            transition: 0s;
+        }
+
+        #sitemenu>input[type="checkbox"]:checked+label>span:nth-child(3) {
+            transform: translate(0px, -8px) rotate(-45deg);
+        }
+
+        #sitemenu>.site-block {
+            border: 2px solid;
+            position: absolute;
+            left: -10;
+            top: 20px;
+            width: 1100px;
+            height: 50vh;
+
+            /* margin:0 auto; */
+
+            /* background-color: orange; */
+            display: none
+
+        }
+
+        #sitemenu>input[type="checkbox"]:checked~.site-block {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+
+            <div class="top-header layout2-1100">
+                <ul>
+                    <li><a href="javascript:void(0)">로그인</a></li>
+                    <li><a href="javascript:void(0)">회원가입</a></li>
+                    <li><a href="javascript:void(0)">쿠폰등록</a></li>
+                    <li><a href="javascript:void(0)">스크랩</a></li>
+                    <li><a href="javascript:void(0)">고객센터</a></li>
+                </ul>
+            </div>
+            <nav class="layout2-1100">
+                <div class="nav-top">
+                    <div class="left logo">
+                        <img src="./logo2.png" alt="">
+                    </div>
+                    <div class="right logo">
+                        <img src="./배송안내.jpg" alt="">
+                    </div>
+                    <div class="right cart">
+                        <img src="./cart.png" alt="">
+                        <span class="cartCnt">0</span>
+                    </div>
+                    <div class="label">
+                        <li>건강마켓 식단관리</li>
+                    </div>
+                    <div class="serach">
+                        <input id="newSearchInput" class="search-input" type="text" placeholder="건강을 쉽게, 뉴트릿">
+                    </div>
+                </div>
+
+                <div class="nav-bottom">
+                    <ul>
+                        <li id="sitemenu">
+                            <input type="checkbox" id="chk">
+                            <label for="chk">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </label>
+                            <div class="site-block">
+
+                            </div>
+
+                            <a href="javascript:void(0)">카테고리</a>
+                        </li>
+                        <li><a href="javascript:void(0)">베스트</a></li>
+                        <li><a href="javascript:void(0)">할인</a></li>
+                        <li><a href="javascript:void(0)">기획전</a></li>
+                        <li><a href="javascript:void(0)">이벤트</a></li>
+                        <li><a href="javascript:void(0)">라운지</a></li>
+                        <li><a href="javascript:void(0)">시니어관</a>
+                            <span>NEW</span>
+                        </li>
+                        <li><a href="javascript:void(0)">브랜드직송관</a></li>
+                        <li><a href="javascript:void(0)">무료영양진단</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+
+        </header>
+        <main>
+            <section></section>
+        </main>
+            <footer class="footer layout2-1100">
+                <div class="footer-section">
+                    <li>회사소개</li>
+                    <li>이용약관</li>
+                    <li>개인정보처리방침</li>
+                    <li>제휴문의</li>
+                </div>
+                <div class="footer-section2">
+                    <h3>고객센터<h3>
+                            <p class="p-section">1800-0700</p>
+                </div>
+                <div class="footer-section3">
+                    <h3 class="h3-seciton">현대그린푸드</h3>
+                    <li>대표이사 : 원병선 ㅣ 사업장소재지 : 대구 중구 중앙대로 366 9층, 10층</li>
+                    <li>사업장등록번호 : 123-45-78910 [사업자정보확인]</li>
+                    <li>통신판매신고번호 : 제 2023-용인수자-0719호</li>
+                    <li>개인정보보호책임자 : 박한결 ㅣ 호스팅 서비스 작업자 : (주)현대그린푸드</li>
+                    <li>뉴트릿의 개별 판매자가 등록한 상품(브랜드직송)에 대한 광고, 상품주문, 배송, 환불의 의무와 책임은 각 판매자가 부담하고, 뉴트릿은 통신판매 중계자로서의 의무와 책임을
+                    다합니다.</li>
+                </div>
+            </footer>
+    </div>
+</body>
+
+</html>
