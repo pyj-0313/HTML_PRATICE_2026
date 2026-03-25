@@ -5,21 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=bookmark" />
+
+    <style>
+        .material-symbols-outlined {
+            color: #918c00;
+            font-size: 18px;
+            display: inline-block;
+            transform: translateY(3px);
+        }
+    </style>
+
+
+
     <style>
         * {
             box-sizing: border-box;
+
+        }
+
+        .triangle-down {
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid black;
+            position: absolute;
+            top: 8px;
+            right: 5px;
         }
 
         body {
             margin: 0;
             padding: 0;
+            overflow-x: auto;
         }
 
         a {
 
 
             text-decoration: none;
-            color: black;
+            color: #1c1c1c;
         }
 
         ul {
@@ -28,11 +53,27 @@
 
         /* Layout */
         .wrapper {
-            /* width:1990px; */
+            width: 100%;
+            max-width: 100%;
+            /* height: 1430px; */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
         }
+
 
         /* Layout-header */
         .wrapper>header {}
+
+        .wrapper>header>.top-header>.menu {
+            /* border:1px solid; */
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: right;
+        }
 
         .wrapper>header>nav {
             flex-direction: column;
@@ -43,15 +84,16 @@
 
         .wrapper>header>.top-header {}
 
-        .wrapper>header>.top-header>ul {
-            /* border: 1px solid; */
-            padding: 15px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: right;
+        .wrapper>header>.top-header>ul>li+li::before {
+            /* content: "|";
+            margin: 0 10px;
+            color: #ccc; */
+        }
+
+        .wrapper>header>.top-header>.menu>li>a {
+            display: block;
             font-size: 14px;
-            gap: 0px;
-            width: 1100px;
+            color: #1c1c1c;
 
 
         }
@@ -68,6 +110,7 @@
             border-left: 1px solid;
             /* border: 1px solid; */
             color: #888888;
+            margin-top: 15px;
         }
 
         .wrapper>header>nav {
@@ -79,58 +122,138 @@
         }
 
         .nav-top {
-            display: flex;
+            /* display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
+            width: 100%; */
+        }
+
+        .nav-top {
+            position: relative;
+            width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
         }
 
         .wrapper>header>nav>.nav-top>.left>img {
-            width: 250px;
+            width: 180px;
             /* border: 1px solid; */
             padding: 0;
             margin: 0;
             cursor: pointer;
+            float: left;
+
+        }
+
+        .wrapper>header>nav>.nav-top>.left-menu {
+            display: flex;
+            align-items: center;
+            float: left;
+            width: 220px;
+            height: 50px;
+            margin-top: 23px;
+            border-radius: 25px;
+            background-color: #eaeaea;
+
+        }
+
+        .wrapper>header>nav>.nav-top>.left-menu>.on {
+            width: 55%;
+            font-weight: bold;
+            color: white;
+            background-color: #918c00;
+            border-radius: 25px;
+            font-size: 20px;
+            line-height: 50px;
+            position: relative;
+            text-align: center;
+        }
+
+        .wrapper>header>nav>.nav-top>.left-menu>.off {
+            position: relative;
+            width: 50%;
+            line-height: 50px;
+            font-size: 20px;
+            color: #929292;
+            text-align: center;
+            background-color: ;
+        }
+
+        .wrapper>header>nav>.nav-top>.nav-right {
+            display: flex;
+            position: relative;
+            margin: 20px 13px 0 0;
+            float: right;
+            align-items: center;
+        }
+
+        .wrapper>header>nav>.nav-top>.nav-right>.serach>a {
+            /* display: block; */
+            position: absolute;
+            right: 220px;
+            top: 15px;
+            width: 55px;
+            height: 55px;
+            /* font-size: 0; */
         }
 
         .search-input {
-            border: 1px solid;
-            width: 400px;
-            height: 55px;
+            left: 35px;
+            width: 390px;
+            border: 1px solid #b2ac00;
             display: flex;
             position: relative;
-            color: #918c00;
             font-size: 1rem;
-            padding: 10px;
+            padding: 18px;
             outline: none;
         }
 
-        .wrapper>header>nav>.nav-top>.right>img {
-            padding: 0;
-            margin-right: 100px;
+        .wrapper>header>nav>.nav-top>.nav-right>.right-logo>img {
+            margin-top: 3px;
+            margin-left: 65px;
             /* border: 1px solid; */
             cursor: pointer;
+
         }
 
-        .wrapper>header>nav>.nav-top>.cart>img {
+        .cart {
+            display: inline-block;
+            position: relative;
+            margin: -2px 0 0 30px;
+            vertical-align: bottom;
+        }
+
+        #carCnt {
+            content: '';
+            display: block;
             position: absolute;
-            right: 10px;
-            border: 1px solid;
+            top: -8px;
+            right: -12px;
+            min-width: 23px;
+            height: 23px;
+            line-height: 23px;
+            background-color: #918c00;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 100%;
         }
 
-        .wrapper>header>nav>.nav-top>.cart {
-            /* border: 1px solid; */
-            padding: 0;
-            right: 600px;
+        .wrapper>header>nav>.nav-bottom {
+            position: relative;
+            width: 1100px;
+            margin: 0 auto;
         }
 
         .wrapper>header>nav>.nav-bottom>ul {
             display: flex;
-            justify-content: center;
+            justify-content: end;
             padding: 20px;
             /* border: 1px solid; */
-            gap: 70px;
+            gap: 40px;
             margin-top: -30px;
+
 
         }
 
@@ -138,9 +261,24 @@
             /* border: 1px solid; */
             font-size: 1rem;
 
+
         }
 
-        .wrapper>header>nav>.nav-bottom>ul>li>a {}
+        .wrapper>header>nav>.nav-bottom>ul>li>a {
+            font-size: 20px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /* border: 1px solid; */
+            margin-right: 10px;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>li>a:hover {
+            color: #918c00;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>.bottom {}
 
         /* sitemenu css */
         #sitemenu {
@@ -152,7 +290,7 @@
         }
 
         #sitemenu>label {
-            cursor: pointer;
+            /* cursor: pointer; */
         }
 
         #sitemenu>label>span {
@@ -179,26 +317,38 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        #sitemenu>.site-block {
-            border: 1px solid;
-            position: absolute;
-            left: -10;
-            top: 30px;
-            width: 1100px;
-            height: 50vh;
+        #sitemenu>.site-block {}
 
-            /* margin:0 auto; */
-
-            /* background-color: orange; */
-            display: none
-        }
-
-        #sitemenu>input[type="checkbox"]:checked~.site-block {
-            display: block;
-        }
+        #sitemenu>input[type="checkbox"]:checked~.site-block {}
 
         /* Layout-main */
-        .wrapper>main {}
+        .wrapper>main>.main {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .wrapper>main>.main>.bottm-banner {
+            width: 100%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper>main>.main>.bottm-banner>.list {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .wrapper>main>.main>.bottm-banner>.list>img {
+            width: 100%;
+            height: auto;
+            display: block;
+
+
+
+        }
 
         .wrapper>main>section {}
 
@@ -215,190 +365,252 @@
         }
     </style>
 
-    <style>
-        .slider-block {
-            /* position: absolute; */
-            width: 1200px;
-            height: 390px;
-            margin: 50px auto;
-            border: 1px solid;
-            /* overflow : hidden; */
-        }
-
-        .slider-block>.slider-wrapper {
-            width: 3600px;
-            height: 390px;
-            position: relative;
-            /* border : 1px solid; */
-            display: flex;
-            align-items: center;
-
-            transition: .3s;
-
-        }
-
-        .slider-block>input[type='radio'] {
-            z-index: 10;
-            display: none;
-        }
-
-        .slider-block>.slider-wrapper>.item {
-            /* width : 1200px; */
-            height: 390px;
-
-            position: relative;
-            left: 0;
-            top: -50px;
-
-            transition: .5s;
-        }
-
-        .slider-block>.slider-wrapper>.item>label {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            border: 1px solid white;
-            border-radius: 50%;
-
-            position: absolute;
-            top: calc(50% - 25px);
-            z-index: 10;
-            cursor: pointer;
-
-            color: white;
-
-        }
-
-        .slider-block>.slider-wrapper>.item>label.prev {
-            left: 5px;
-        }
-
-        .slider-block>.slider-wrapper>.item>label.next {
-            right: 5px;
-        }
-
-        .slider-block {
-            width: 1990px;
-            height: 395px;
-        }
-
-        .slider-block>.slider-wrapper>.item>.show {
-            /* width : 1990px; */
-            /* height : 395px; */
-
-            display: flex;
-            align-items: center;
-            ;
-            justify-content: center;
-            font-size: 3rem;
-            /* border : 1px solid; */
-            /* position:absolute; */
-            /* left:0; */
-            /* top:0; */
-        }
-
-        .slider-block>.slider-wrapper>.item>.show.one {
-            /* background-color: orange; */
-            opacity: 1;
-            /* border: 1px solid; */
-            box-sizing: border-box;
-            width: 600px;
-
-        }
-
-        .slider-block>.slider-wrapper>.item>.show.two {
-            /* background-color: royalblue; */
-            opacity: 1;
-            /* border: 1px solid; */
-            box-sizing: border-box;
-            width: 600px;
-        }
-
-        .slider-block>.slider-wrapper>.item>.show.three {
-            /* background-color: rebeccapurple; */
-            opacity: 1;
-            /* border: 1px solid; */
-            box-sizing: border-box;
-            width: 600px;
-        }
-
-
-
-        .slider-block>#forward-2:checked~.slider-wrapper {
-            left: -1200px;
-
-        }
-
-        .slider-block>#forward-3:checked~.slider-wrapper {
-            left: -2400px;
-
-        }
-
-        .slider-block>#backend-1:checked~.slider-wrapper {
-            left: 0px;
-
-        }
-
-        .slider-block>#backend-2:checked~.slider-wrapper {
-            left: -1200px;
-
-        }
-
-        @keyframes m1 {
-            from {}
-
-            to {}
-        }
-
-        @keyframes m2 {
-            from {}
-
-            to {}
-        }
-
-        @keyframes m3 {
-            from {}
-
-            to {}
-        }
-    </style>
-
-
-
     <!-- footer 스타일 -->
     <style>
         .footer-hd {
             background-color: #f9f9f9;
             padding: 40px 0 70px;
+            height: 352px;
+            bottom: 0;
+
         }
 
         .footer-hd-inner {
             width: 1100px;
-            border: 1px solid;
+            /* border: 1px solid; */
             margin: 0 auto;
         }
 
         .footer-item {
             display: flex;
-            gap: 30px;
+            gap: 5px;
+            margin: 0;
+            padding: 0;
+            font-size: 17px;
+            color: #1c1c1c;
+
+
         }
 
-        .footer-left{
-            float:left;
-            width:490px;
+        .footer-item>li+li::before {
+            content: "|";
+            margin: 0 10px;
+            color: #ccc;
         }
 
-        .footer-left>.sns{
+        .footer-left {
+            float: left;
+            /* width: 490px; */
+        }
+
+        .support {
+            margin: 34px 0 25px;
+
+        }
+
+        .support>.support-title {
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 600;
+
+        }
+
+        .support-tel {
             display: block;
+            margin: 5px 0 15px;
+            font-size: 32px;
+            font-weight: 600;
+            color: #918c00;
+        }
+
+        .support>.support-desc {
+            line-height: 29px;
+            font-size: 16px;
+            color: #888;
+        }
+
+        .footer-left>.sns {
+            display: flex;
             position: relative;
-            /* width: 100px; */
-            /* height: 100px; */
+            gap: 30px;
+            margin: 0 -40px;
+
+        }
+
+        .footer-left>.sns>li>a>img {
+            width: 50px;
+            height: 50px;
+            margin-top: -10px;
+
+
+        }
+
+        .footer-right {
+            position: relative;
+            float: right;
+            /* border: 1px solid; */
+            /* width:610px; */
+
+        }
+
+        .footer-right>.company {
+            margin: 60px 0 10px;
+            /* border:1px solid; */
+        }
+
+        .footer-right>.company>.company-name {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .footer-right>.company>.company-info {
+            line-height: 27px;
+            font-size: 15px;
+            color: #888;
+        }
+
+        .footer-right>.company>.company-info2 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #888;
+            margin: -10px;
+
+        }
+
+        .footer-right>.company>.company-info2>img {}
+    </style>
+
+
+
+
+<!-- asdsadsad -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        </style>
+
+    <style>
+        .slider-block{
+            width : 1200px;
+            height : 500px;
+            margin : 50px auto;
+            border : 1px solid;
+            overflow : hidden;
+        }
+        .slider-block>.slider-wrapper{
+            width : 3600px;
+            height : 500px;
+            position:relative;
+
+            display:flex;
+            align-items: center;
+            
+            transition:.3s;
+           
+        }
+        .slider-block>input[type='radio']{
+            z-index : 10;
+            display:none;
+        }
+        .slider-block>.slider-wrapper>.item{
+            width : 1200px;
+            height :500px;
+
+            position:relative;
+            left:0;
+            top:0;
+
+            transition:.5s;
+        }
+        .slider-block>.slider-wrapper>.item>label{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width : 50px;
+            height : 50px;
+            border : 1px solid white;
+            border-radius: 50%;
+
+            position:absolute;
+            top:calc(50% - 25px);
+            z-index : 10;
+            cursor: pointer;
+            
+            color : white;
+
+        }
+        .slider-block>.slider-wrapper>.item>label.prev{
+            left:5px;
+        }
+        .slider-block>.slider-wrapper>.item>label.next{
+            right:5px;
+        }
+        .slider-block>.slider-wrapper>.item>.show{
+            width : 100%;
+            height : 100%;
+
+            display:flex;
+            align-items: center;;
+            justify-content: center;
+            font-size : 3rem;
+
+            position:absolute;
+            left:0;
+            top:0;
+        }
+        .slider-block>.slider-wrapper>.item>.show.one{
+            background-color: orange;
+            opacity: 1;
+          
+        }
+        .slider-block>.slider-wrapper>.item>.show.two{
+            background-color: royalblue;
+            opacity: 1;
+        }
+        .slider-block>.slider-wrapper>.item>.show.three{
+            background-color: rebeccapurple;
+            opacity: 1;
+        }
+
+
+
+        .slider-block>#forward-2:checked~.slider-wrapper{
+            left:-1200px;
+          
+        }
+        .slider-block>#forward-3:checked~.slider-wrapper{
+            left:-2400px;
+           
+        }
+        .slider-block>#backend-1:checked~.slider-wrapper{
+            left:0px;
+           
+        }
+        .slider-block>#backend-2:checked~.slider-wrapper{
+            left:-1200px;
             
         }
-    
-
+        @keyframes m1{
+            from{}
+            to{}
+        }
+        @keyframes m2{
+            from{}
+            to{}
+        }
+        @keyframes m3{
+            from{}
+            to{}
+        }
     </style>
 </head>
 
@@ -408,12 +620,18 @@
     <div class="wrapper">
         <header>
             <div class="top-header">
-                <ul>
+                <ul class="menu">
                     <li><a href="javascript:void(0)">로그인</a></li>
+
                     <li><a href="javascript:void(0)">회원가입</a></li>
                     <li><a href="javascript:void(0)">쿠폰등록</a></li>
-                    <li><a href="javascript:void(0)">스크랩</a></li>
-                    <li><a href="javascript:void(0)">고객센터</a></li>
+                    <li><a href="javascript:void(0)">
+                            <span class="material-symbols-outlined">
+                                bookmark</span>스크랩</a></li>
+                    <li><a href="javascript:void(0)">고객센터
+                            <div class="triangle-down"></div>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <nav>
@@ -421,17 +639,29 @@
                     <div class="left logo">
                         <img src="./logo2.png" alt="logo">
                     </div>
-                    <div class="serach">
-                        <input id="newSearchInput" class="search-input" type="text" placeholder="건강을 쉽게, 뉴트릿">
+                    <div class="left-menu">
+                        <a href="javascript:void(0)" class="on">건강마켓</a>
+                        <a href="javascript:void(0)" class="off">식단관리</a>
                     </div>
-                    <div class="right logo">
-                        <img src="./배송안내.jpg" alt="">
+                    <div class="nav-right">
+                        <div class="serach">
+                            <input id="newSearchInput" class="search-input" type="text" placeholder="건강을 쉽게, 뉴트릿">
+                            <button type="button" class="search-remove" style="display: none;">지우기</button>
+                            <a href="javascript:void(0)">검색</a>
+                        </div>
+                        <div class="right-logo">
+                            <img src="./배송안내.jpg" alt="">
+                        </div>
+                        <a href="javascript:void(0)" class="cart">
+                            <span id="carCnt">0</span>
+                            <img src="./cart.png" alt="장바구니">
+                        </a>
                     </div>
                 </div>
 
                 <div class="nav-bottom">
                     <ul>
-                        <li id="sitemenu">
+                        <!-- <li id="sitemenu">
                             <input type="checkbox" id="chk">
                             <label for="chk">
 
@@ -443,12 +673,14 @@
                             </label>
 
                             <div class="site-block">
-
+                                
 
                             </div>
-                        </li>
-
+                        
+                        </li> -->
+                        <div class="bottom"></div>
                         <li><a href="javascript:void(0)">카테고리</a></li>
+                        <li><a href="javascript:void(0)">베스트</a></li>
                         <li><a href="javascript:void(0)">할인</a></li>
                         <li><a href="javascript:void(0)">기획전</a></li>
                         <li><a href="javascript:void(0)">이벤트</a></li>
@@ -461,113 +693,99 @@
             </nav>
         </header>
         <main>
-            <div class="slider-block">
-                <input type="radio" id="forward-2" name="slideradio">
-                <input type="radio" id="forward-3" name="slideradio">
-                <input type="radio" id="backend-1" name="slideradio" checked>
-                <input type="radio" id="backend-2" name="slideradio">
-                <div class="slider-wrapper">
-                    <!-- 1번 슬라이드 -->
-                    <div class="item">
-                        <label for="" class="prev"><span class="material-symbols-outlined"></span></label>
-                        <label for="forward-2" class="next"><span
-                                class="material-symbols-outlined">arrow_right</span></label>
-                        <div class="show one">
-                            <img src="./배너1.jpg" alt="">
+            <div class="main"> 
+                <section>
+                    <div class="slider-block">
+                        <input type="radio" id="forward-2" name="slideradio">
+                        <input type="radio" id="forward-3" name="slideradio">
+                        <input type="radio" id="backend-1" name="slideradio" checked>
+                        <input type="radio" id="backend-2" name="slideradio">
+                        <div class="slider-wrapper">
+                            <!-- 1번 슬라이드 -->
+                            <div class="item">
+                                <label for="" class="prev"><span
+                                        class="material-symbols-outlined">arrow_left</span></label>
+                                <label for="forward-2" class="next"><span
+                                        class="material-symbols-outlined">arrow_right</span></label>
+                                <div class="show one">SLIDER-01</div>
+                            </div>
+                            <!-- 2번 슬라이드 -->
+                            <div class="item">
+                                <label for="backend-1" class="prev"><span
+                                        class="material-symbols-outlined">arrow_left</span></label>
+                                <label for="forward-3" class="next"><span
+                                        class="material-symbols-outlined">arrow_right</span></label>
+                                <div class="show two">SLIDER-02</div>
+                            </div>
+                            <!-- 3번 슬라이드 -->
+                            <div class="item">
+                                <label for="backend-2" class="prev"><span
+                                        class="material-symbols-outlined">arrow_left</span></label>
+                                <label for="" class="next"><span
+                                        class="material-symbols-outlined">arrow_right</span></label>
+                                <div class="show three">SLIDER-03</div>
+                            </div>
                         </div>
                     </div>
-                    <!-- 2번 슬라이드 -->
-                    <div class="item">
-                        <label for="backend-1" class="prev"><span class="material-symbols-outlined"></span></label>
-                        <label for="forward-3" class="next"><span class="material-symbols-outlined"></span></label>
-                        <div class="show two">
-                            <img src="./배너2.jpg" alt="">
-                        </div>
+                </section>
+                <section></section>
+
+                <section class="bottm-banner">
+                    <div class="list">
+                        <img src="./banner1.jpg">
                     </div>
-                    <!-- 3번 슬라이드 -->
-                    <div class="item">
-                        <label for="backend-2" class="prev"><span class="material-symbols-outlined"></span></label>
-                        <label for="" class="next"><span class="material-symbols-outlined"></span></label>
-                        <div class="show three">
-                            <img src="./배너3.jpg" alt="">
-                        </div>
-                    </div>
-                    <!-- 4번 슬라이드 -->
-                    <div class="item">
-                        <label for="backend-2" class="prev"><span class="material-symbols-outlined"></span></label>
-                        <label for="" class="next"><span class="material-symbols-outlined"></span></label>
-                        <div class="show three">
-                            <img src="./배너4.jpg" alt="">
-                        </div>
-                    </div>
-                    <!-- 5번 슬라이드 -->
-                    <div class="item">
-                        <label for="backend-2" class="prev"><span class="material-symbols-outlined"></span></label>
-                        <label for="" class="next"><span class="material-symbols-outlined"></span></label>
-                        <div class="show three">
-                            <img src="./배너5.jpg" alt="">
-                        </div>
-                    </div>
-                    <!-- 6번 슬라이드 -->
-                    <div class="item">
-                        <label for="backend-2" class="prev"><span class="material-symbols-outlined"></span></label>
-                        <label for="" class="next"><span class="material-symbols-outlined"></span></label>
-                        <div class="show three">
-                            <img src="./배너6.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
-            <section></section>
-            <section></section>
-            <section></section>
         </main>
-        <footer id="footer">
-            <div class="footer-hd">
-                <div class="footer-hd-inner">
-                    <div class="footer-left">
-                        <ul class="footer-item">
-                            <li>회사소개</li>
-                            <li>이용약관</li>
-                            <li>개인정보처리방침</li>
-                            <li>제휴문의</li>
-                        </ul>
-                        <div class="support">
-                            <li class="support-title">고객센터</li>
-                            <span class="support-tel">1800-0700</span>
-                            <p class="support-desc">
-                                평일, 토요일 7:00~18:00
-                                <br>
-                                공휴일 7시 ~ 13시(일요일휴무)
-                                <br>
-                                카카오톡 @뉴트릿 친구 추가하고 소식과 혜택을 받아보세요.
-                            </p>
-                        </div>
-                        <!-- <ul class="sns">
-                            <li>
-                                <a href="https://www.instagram.com/" target="_blank">
-                                    <img src="./insta_logo.svg" alt="인스타 로고">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/" target="_blank">
-                                    <img src="./youtube2_logo.svg" alt="유튜브 로고">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://section.blog.naver.com/" target="_blank">
-                                    <img src="./blog_logo.svg" alt="네이버 블로그 로고">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://accounts.kakao.com/" target="_blank">
-                                    <img src="./kakaotalk_logo.svg" alt="카카오톡 로고">
-                                </a>
-                            </li>
-                        </ul> -->
+    </div>
+    <footer id="footer">
+        <div class="footer-hd">
+            <div class="footer-hd-inner">
+                <div class="footer-left">
+                    <ul class="footer-item">
+                        <li>회사소개</li>
+                        <li>이용약관</li>
+                        <li>개인정보처리방침</li>
+                        <li>제휴문의</li>
+                    </ul>
+                    <div class="support">
+                        <strong class="support-title">고객센터</strong>
+                        <span class="support-tel">1800-0700</span>
+                        <p class="support-desc">
+                            평일, 토요일 7:00~18:00
+                            <br>
+                            공휴일 7시 ~ 13시(일요일휴무)
+                            <br>
+                            카카오톡 @뉴트릿 친구 추가하고 소식과 혜택을 받아보세요.
+                        </p>
                     </div>
-                    <div class="footer-right">
-                        <li class="company-name">현대그린푸드</li>
+                    <ul class="sns">
+                        <li>
+                            <a href="https://www.instagram.com/greating.official/" target="_blank">
+                                <img src="./insta_logo.svg" alt="인스타 로고">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UClyxH287Qe5OEWxCPXRRvHg" target="_blank">
+                                <img src="./youtube2_logo.svg" alt="유튜브 로고">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://blog.naver.com/h_greating" target="_blank">
+                                <img src="./blog_logo.svg" alt="네이버 블로그 로고">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fpf.kakao.com%2F_xjuhtT%2Fchat%3Fapi_ver%3D1.0%26kakao_agent%3Dsdk%252F1.43.6%2520os%252Fjavascript%2520sdk_type%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttps%25253A%25252F%25252Fwww.greating.co.kr%26app_key%3D3ee3b3c91fa6a9e9be6b05253143a90b%26referer%3Dhttps%253A%252F%252Fwww.greating.co.kr%252F#login"
+                                target="_blank">
+                                <img src="./kakaotalk_logo.svg" alt="카카오톡 로고">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <div class="company">
+                        <strong class="company-name">현대그린푸드</strong>
                         <div class="company-info">
                             대표이사 : 원병선 | 사업장소재지 : 대구 중구 중앙대로 366 9층, 10층
                             <br>
@@ -581,9 +799,9 @@
                                 각 판매자가 부담하고, 뉴트릿은 통신판매 중계자로서의 의무와 책임을 다합니다.
                             </p>
                         </div>
-                        <div class="comapny-info2">
+                        <div class="company-info2">
                             <img src="./ISMSP_logo.jpg" alt="">
-                            <div>
+                            <div class="info2-flex">
                                 [인증범위] : 대표홈페이지 및 뉴트릿몰 서비스 운영
                                 <br>
                                 [유효기간] : 2026.02.24 ~ 2027.02.24
@@ -592,8 +810,8 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-        </footer>
-    </div>
+    </footer>
 
 </html>
