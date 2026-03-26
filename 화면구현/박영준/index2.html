@@ -13,7 +13,7 @@
             color: #918c00;
             font-size: 18px;
             display: inline-block;
-            transform: translateY(3px);
+            transform: translateY(6px);
         }
     </style>
 
@@ -119,13 +119,6 @@
             display: flex;
             align-items: center;
             padding: 0;
-        }
-
-        .nav-top {
-            /* display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%; */
         }
 
         .nav-top {
@@ -278,7 +271,86 @@
             color: #918c00;
         }
 
-        .wrapper>header>nav>.nav-bottom>ul>.bottom {}
+        
+        .wrapper>header>nav>.nav-bottom>ul>.bottom{
+            position: relative;
+            width:1100px;
+            margin:0 auto;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>.bottom>.bottom-all{
+            position: relative;
+            padding-bottom: 20px;
+            width: 160px;
+            vertical-align: top;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>.bottom>.bottom-all>a{
+            display: block;
+            position: relative;
+            font-size: 20px;
+            line-height: 37px;
+            white-space: nowrap;
+        }
+
+        .wrapper>header>nav>.nav-bottom>ul>.bottom>.bottom-all>a>.all-icon{
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: -6px;
+            vertical-align: middle;
+        }
+
+        .all-icon>span{
+            display: block;
+            position: relative;
+            width: 25px;
+            height: 2px;
+            background-color: #1c1c1c;
+            transition: all 0.5s ease;
+            z-index: 4;
+            margin: 5px;
+        }
+
+        .bottom-tap{
+            display: inline;
+            position: relative;
+            z-index: 4;
+        }
+
+        .all-menu{
+            display: none;
+            position: absolute;
+            left: -40px;
+            top: 57px;
+            width: 1180px;
+            background-color: white;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .all-menu-inner{
+            position: relative;
+            padding: 40px 50px 40px 0;
+            border: 2px solid #1c1c1c;
+        }
+
+        .all-menu-1{
+            display: flex;
+        }
+
+        .all-menu-1>li{
+            width: 20%;
+        }
+
+        .all-menu-1>li>a{
+            display: block;
+            margin: 0 10 10 60px;
+            padding-bottom: 8px;
+            font-size: 21px;
+            font-weight: 600;
+            border-bottom: 2px solid #1c1c1c;
+        }
+
 
         /* sitemenu css */
         #sitemenu {
@@ -486,130 +558,151 @@
 
 
 
-<!-- asdsadsad -->
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- asdsadsad -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         .material-symbols-outlined {
-          font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 24
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
         }
-        </style>
+    </style>
 
     <style>
-        .slider-block{
-            width : 1200px;
-            height : 500px;
-            margin : 50px auto;
-            border : 1px solid;
-            overflow : hidden;
+        .slider-block {
+            width: 1200px;
+            height: 500px;
+            margin: 50px auto;
+            border: 1px solid;
+            overflow: hidden;
         }
-        .slider-block>.slider-wrapper{
-            width : 3600px;
-            height : 500px;
-            position:relative;
 
-            display:flex;
+        .slider-block>.slider-wrapper {
+            width: 3600px;
+            height: 500px;
+            position: relative;
+
+            display: flex;
             align-items: center;
-            
-            transition:.3s;
-           
-        }
-        .slider-block>input[type='radio']{
-            z-index : 10;
-            display:none;
-        }
-        .slider-block>.slider-wrapper>.item{
-            width : 1200px;
-            height :500px;
 
-            position:relative;
-            left:0;
-            top:0;
+            transition: .3s;
 
-            transition:.5s;
         }
-        .slider-block>.slider-wrapper>.item>label{
+
+        .slider-block>input[type='radio'] {
+            z-index: 10;
+            display: none;
+        }
+
+        .slider-block>.slider-wrapper>.item {
+            width: 1200px;
+            height: 500px;
+
+            position: relative;
+            left: 0;
+            top: 0;
+
+            transition: .5s;
+        }
+
+        .slider-block>.slider-wrapper>.item>label {
             display: flex;
             justify-content: center;
             align-items: center;
-            width : 50px;
-            height : 50px;
-            border : 1px solid white;
+            width: 50px;
+            height: 50px;
+            border: 1px solid white;
             border-radius: 50%;
 
-            position:absolute;
-            top:calc(50% - 25px);
-            z-index : 10;
+            position: absolute;
+            top: calc(50% - 25px);
+            z-index: 10;
             cursor: pointer;
-            
-            color : white;
+
+            color: white;
 
         }
-        .slider-block>.slider-wrapper>.item>label.prev{
-            left:5px;
-        }
-        .slider-block>.slider-wrapper>.item>label.next{
-            right:5px;
-        }
-        .slider-block>.slider-wrapper>.item>.show{
-            width : 100%;
-            height : 100%;
 
-            display:flex;
-            align-items: center;;
+        .slider-block>.slider-wrapper>.item>label.prev {
+            left: 5px;
+        }
+
+        .slider-block>.slider-wrapper>.item>label.next {
+            right: 5px;
+        }
+
+        .slider-block>.slider-wrapper>.item>.show {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            ;
             justify-content: center;
-            font-size : 3rem;
+            font-size: 3rem;
 
-            position:absolute;
-            left:0;
-            top:0;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
-        .slider-block>.slider-wrapper>.item>.show.one{
+
+        .slider-block>.slider-wrapper>.item>.show.one {
             background-color: orange;
             opacity: 1;
-          
+
         }
-        .slider-block>.slider-wrapper>.item>.show.two{
+
+        .slider-block>.slider-wrapper>.item>.show.two {
             background-color: royalblue;
             opacity: 1;
         }
-        .slider-block>.slider-wrapper>.item>.show.three{
+
+        .slider-block>.slider-wrapper>.item>.show.three {
             background-color: rebeccapurple;
             opacity: 1;
         }
 
 
 
-        .slider-block>#forward-2:checked~.slider-wrapper{
-            left:-1200px;
-          
+        .slider-block>#forward-2:checked~.slider-wrapper {
+            left: -1200px;
+
         }
-        .slider-block>#forward-3:checked~.slider-wrapper{
-            left:-2400px;
-           
+
+        .slider-block>#forward-3:checked~.slider-wrapper {
+            left: -2400px;
+
         }
-        .slider-block>#backend-1:checked~.slider-wrapper{
-            left:0px;
-           
+
+        .slider-block>#backend-1:checked~.slider-wrapper {
+            left: 0px;
+
         }
-        .slider-block>#backend-2:checked~.slider-wrapper{
-            left:-1200px;
-            
+
+        .slider-block>#backend-2:checked~.slider-wrapper {
+            left: -1200px;
+
         }
-        @keyframes m1{
-            from{}
-            to{}
+
+        @keyframes m1 {
+            from {}
+
+            to {}
         }
-        @keyframes m2{
-            from{}
-            to{}
+
+        @keyframes m2 {
+            from {}
+
+            to {}
         }
-        @keyframes m3{
-            from{}
-            to{}
+
+        @keyframes m3 {
+            from {}
+
+            to {}
         }
     </style>
 </head>
@@ -678,22 +771,51 @@
                             </div>
                         
                         </li> -->
-                        <div class="bottom"></div>
-                        <li><a href="javascript:void(0)">카테고리</a></li>
-                        <li><a href="javascript:void(0)">베스트</a></li>
-                        <li><a href="javascript:void(0)">할인</a></li>
-                        <li><a href="javascript:void(0)">기획전</a></li>
-                        <li><a href="javascript:void(0)">이벤트</a></li>
-                        <li><a href="javascript:void(0)">라운지</a></li>
-                        <li><a href="javascript:void(0)">시니어관</a></li>
-                        <li><a href="javascript:void(0)">브랜드직송관</a></li>
-                        <li><a href="javascript:void(0)">무료영양진단</a></li>
+                        <div class="bottom">
+                            <div class="bottom-all">
+                                <a href="javascript:void(0)">
+                                    <sapn class="all-icon">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </sapn>
+                                    <div class="bottom-tap">카테고리</div>
+                                </a>
+                                <div class="all-menu">
+                                    <div class="all-menu-inner">
+                                        <ul class="all-menu-1">
+                                            <li>
+                                                <a href="javascript:void(0)">건강마켓</a>
+                                                <ul class="all-menu-2">
+                                                    <li>메인요리/반찬</li>
+                                                    <li>국/탕/찌개</li>
+                                                    <li>맞춤 도시락</li>
+                                                    <li>밥/면/죽</li>
+                                                    <li>샐러드/디저트/분식</li>
+                                                    <li>식재료</li>
+                                                    <li>키즈</li>
+                                                    <li>마켓 정기구독</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <li><a href="javascript:void(0)">베스트</a></li>
+                            <li><a href="javascript:void(0)">할인</a></li>
+                            <li><a href="javascript:void(0)">기획전</a></li>
+                            <li><a href="javascript:void(0)">이벤트</a></li>
+                            <li><a href="javascript:void(0)">라운지</a></li>
+                            <li><a href="javascript:void(0)">시니어관</a></li>
+                            <li><a href="javascript:void(0)">브랜드직송관</a></li>
+                            <li><a href="javascript:void(0)">무료영양진단</a></li>
+                        </div>
                     </ul>
                 </div>
             </nav>
         </header>
         <main>
-            <div class="main"> 
+            <div class="main">
                 <section>
                     <div class="slider-block">
                         <input type="radio" id="forward-2" name="slideradio">
