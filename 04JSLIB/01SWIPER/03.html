@@ -200,6 +200,16 @@
             transition: .3s;
         }
 
+        main>.multi-slider>.swiper>.swiper-wrapper>.swiper-slide>a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+
+        }
+
         main>.multi-slider>.swiper>.swiper-wrapper>.swiper-slide-active {
             background-color: orange;
             transform: scale(1.5);
@@ -320,106 +330,28 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="javascript:void(0)">
-                                <img src="" alt="">
-                            </a>
-                        </div>
+                        <!-- .swiper-slide*20>a[href="javascript:void(0)"]{$} -->
+                        <div class="swiper-slide"><a href="javascript:void(0)">1</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">2</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">3</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">4</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">5</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">6</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">7</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">8</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">9</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">10</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">11</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">12</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">13</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">14</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">15</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">16</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">17</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">18</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">19</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">20</a></div>
+
 
                     </div>
                     <!-- If we need navigation buttons -->
@@ -523,45 +455,20 @@
         // MultiSlider Mouse Event
         const multiSliderEl = document.querySelector('main>.multi-slider>.swiper');
         multiSliderEl.addEventListener('mouseover', () => { multiSliderSwiper.autoplay.stop(); });
-
         multiSliderEl.addEventListener('mouseleave', () => { multiSliderSwiper.autoplay.start(); });
 
-        //
-        // MultiSlider 주변 slide 클릭시 중심위치 이동
-        let allSwiperSilder = document.querySelectorAll('.multi-slider .swiper .swiper-slide')//배열OBJECT반환
-        allSwiperSilder = Array.from(allSwiperSilder)
-        allSwiperSilder.forEach(item => {
+        //클릭한 위치를 중심으로 이동(수정)
+        multiSliderEl.addEventListener('click', (e) => {
+            const slide = e.target.closest('main>.multi-slider>.swiper .swiper-slide');
+            if (!slide) return;
+            if (slide.classList.contains('main>.multi-slider>.swiper swiper-slide-active')) return;
 
-            item.addEventListener('click', () => {
-                let idx = -1
-                if (!item.classList.contains('swiper-slide-active')) {
-                    //클릭한 swiper-slide가 active가 아닌경우
-                    allSwiperSilder.forEach(el => {
-                        el.classList.remove('swiper-slide-active');
-                        el.classList.remove('swiper-slide-prev')
-                        el.classList.remove('swiper-slide-next')
-                    })
-                    item.classList.add('swiper-slide-active')
-                    idx = Array.from(allSwiperSilder).indexOf(item);
-                    console.log('idx', idx)
-                    if (idx === 0) {
-                        //슬라이드중 첫번째
-                        allSwiperSilder[allSwiperSilder.length - 1].classList.add('swiper-slide-prev')
-                        allSwiperSilder[idx + 1].classList.add('swiper-slide-next')
-                    }
-                    else if (idx == allSwiperSilder.length - 1) {
-                        //슬라이드중 마지막번째
-                        allSwiperSilder[idx - 1].classList.add('swiper-slide-prev')
-                        allSwiperSilder[0].classList.add('swiper-slide-next')
-                    }
-                    else {
-                        allSwiperSilder[idx - 1].classList.add('swiper-slide-prev')
-                        allSwiperSilder[idx + 1].classList.add('swiper-slide-next')
-                    }
-                    multiSwiper.slideTo(idx);
-                }
-            })
-        })
+            // data-swiper-slide-index : Swiper가 각 슬라이드에 부여하는 실제 인덱스
+            const realIndex = parseInt(slide.getAttribute('data-swiper-slide-index'));
+            if (!isNaN(realIndex)) {
+                multiSliderSwiper.slideToLoop(realIndex); // loop 모드에서는 slideToLoop 사용
+            }
+        });
 
     </script>
 
