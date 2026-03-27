@@ -38,7 +38,18 @@
         .move{
             left:calc(100% - 100px);
             top:calc(100% - 100px);
+
+            transform: rotate(180deg);background-color: black;color:white;
+            transition: 2s;
         }
+
+            /* animation-name : ball;
+            animation-iteration-count: infinite;
+            animation-duration: 1s; */
+        /* @keyframes ball {
+            from{transform: rotate(0deg);background-color: white;color:black;} */
+            /* to{transform: rotate(180deg);background-color: black;color:white;} */
+        
     </style>
 </head>
 
@@ -64,7 +75,7 @@
                 triggerHookL:0.5,                        //스크롤 위치값(0-1,0:최상단, .5:중앙, 1:최하단)
             })                                           
 
-            .setClassToggle()                            //애니메이션 효과 적용
+            .setClassToggle(ballEl,'move')                            //애니메이션 효과 적용
             .addTo(new ScrollMagic.Controller());        //제어부(스크롤 상황 감시)
 
     </script>
